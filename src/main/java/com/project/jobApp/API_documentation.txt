@@ -1,0 +1,20 @@
+Swagger-UI URL: http://localhost:8081/swagger-ui/index.html
+
+API's:
+CompanyController API's ->
+1. GET -- http://localhost:8081/companies -- get all companies -- working fine
+2. GET -- http://localhost:8081/companies/Pune -- get companies by Location -- working fine
+3. GET -- http://localhost:8081/companies/name/BCG -- get companies by name -- working fine
+4. GET -- http://localhost:8081/companies/id/4 -- Get companies by Id
+5. GET -- http://localhost:8081/companies/jobs/BCG -- get jobs by company name -- Failed (Test after creating jobs)
+
+6. POST -- http://localhost:8081/companies -- create a company -- working fine
+7. PUT -- http://localhost:8081/companies -- update company details -- working fine
+8. DELETE -- http://localhost:8081/companies/5 -- delete a company by id -- working fine
+
+JobController API's ->
+1. GET -- get all jobs -- http://localhost:8081/jobs -- working fine
+2. GET -- get job by id -- http://localhost:8081/jobs/12 -- working fine
+3. PUT -- update job by id -- http://localhost:8081/jobs/8 -- working fine
+4. DELETE -- delete job by id -- http://localhost:8081/jobs/8 -- working fine
+5. POST -- create job -- http://localhost:8081/jobs -- working fine
