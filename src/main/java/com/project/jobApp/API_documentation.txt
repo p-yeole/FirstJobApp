@@ -18,3 +18,10 @@ JobController API's ->
 3. PUT -- update job by id -- http://localhost:8081/jobs/8 -- working fine
 4. DELETE -- delete job by id -- http://localhost:8081/jobs/8 -- working fine
 5. POST -- create job -- http://localhost:8081/jobs -- working fine
+
+ReviewController API's ->
+1. GET -- get reviews of specific company by company id -- http://localhost:8081/companies/4/reviews -- working fine
+2. GET -- get review by id of a specific company -- http://localhost:8081/companies/2/reviews/11 -- working fine
+3. POST -- create a review -- http://localhost:8081/companies/4/reviews -- working fine
+4. PUT -- update a review -- http://localhost:8081/companies/2/reviews/1 -- working fine
+5. DELETE -- delete a review -- http://localhost:8081/companies/6/reviews/17 -- working fine
