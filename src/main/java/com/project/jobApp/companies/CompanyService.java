@@ -8,10 +8,11 @@ public interface CompanyService {
 
 	List<Company> findAll();
 	Company getCompanyById(Long id);
-	Company getCompanyByName(String name);
+//	Company getCompanyByName(String name);
 	List<Company> findCompaniesByLocation(String location);
 	void createCompany(CompanyDto companyDto);
 	boolean deleteCompanyById(Long id);
 	boolean updateCompanyDetails(CompanyDto companyDto);
 	List<Job> getJobsByCompanyName(String name);
+	Company getCompanyByName(String name);
 }

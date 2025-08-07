@@ -36,7 +36,9 @@ public class CompanyServiceImpl implements CompanyService{
 	@Override
 	public Company getCompanyByName(String name) {
 		// TODO Auto-generated method stub
-		return this.findAll().stream().filter(company -> company.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+		Company company = companyRepository.findByName(name);
+		return company;
+//		return this.findAll().stream().filter(company -> company.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
 	}
 
 	@Override
