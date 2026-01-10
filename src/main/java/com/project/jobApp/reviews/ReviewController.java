@@ -27,7 +27,7 @@ public class ReviewController {
 
 	//get all reviews of a company
 	@GetMapping
-	public ResponseEntity<List<Review>> findAll(@PathVariable("companyId") Long companyId){
+	public ResponseEntity<List<Review>> findAll(@PathVariable Long companyId){
 		List<Review> companyReviews =  reviewService.findByCompanyId(companyId);
 		if (companyReviews.isEmpty()) {
 		    return new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK);
@@ -52,7 +52,7 @@ public class ReviewController {
 	
 	//get review by companyId and reviewId
 	@GetMapping("/{reviewId}")
-	public ResponseEntity<Review> findById(@PathVariable("companyId") Long companyId, @PathVariable("reviewId") Long reviewId){
+	public ResponseEntity<Review> findById(@PathVariable Long companyId, @PathVariable Long reviewId){
 		Optional<Review> review = reviewService.findByCompanyIdAndReviewId(companyId, reviewId);
 		if(review.isEmpty()) {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -63,7 +63,7 @@ public class ReviewController {
 	
 	//edit review by review id and company id
 	@PutMapping("/{reviewId}")
-	public ResponseEntity<String> editReview(@RequestBody ReviewDto reviewDto, @PathVariable("companyId") Long companyId, @PathVariable("reviewId") Long reviewId){
+	public ResponseEntity<String> editReview(@RequestBody ReviewDto reviewDto, @PathVariable Long companyId, @PathVariable Long reviewId){
 		if(reviewDto.getComment().isEmpty()) {
 			return new ResponseEntity<>("Review cannot be empty.", HttpStatus.BAD_REQUEST);
 		}
@@ -78,7 +78,7 @@ public class ReviewController {
 	
 	//delete a review
 	@DeleteMapping("/{reviewId}")
-	public ResponseEntity<String> deleteReview(@PathVariable("companyId") Long companyId, @PathVariable("reviewId") Long reviewId) {
+	public ResponseEntity<String> deleteReview(@PathVariable Long companyId, @PathVariable Long reviewId) {
 		reviewService.deleteReview(companyId, reviewId);
 		return new ResponseEntity<>("Review deleted successfully", HttpStatus.OK);
 	}

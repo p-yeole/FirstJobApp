@@ -33,7 +33,7 @@ public class CompanyController {
 	
 	//find company by id - single
 	@GetMapping("/id/{id}")
-	public ResponseEntity<Company> findById(@PathVariable("id") Long id){
+	public ResponseEntity<Company> findById(@PathVariable Long id){
 		Company company = companyService.getCompanyById(id);
 		if(company!=null) {
 			return new ResponseEntity<>(company, HttpStatus.OK);
@@ -46,7 +46,7 @@ public class CompanyController {
 	
 	//find company by name - single
 	@GetMapping("/name/{name}")
-	public ResponseEntity<Company> findByName(@PathVariable("name") String name){
+	public ResponseEntity<Company> findByName(@PathVariable String name){
 		Company company = companyService.getCompanyByName(name);
 		if(company!=null)
 			return new ResponseEntity<>(company, HttpStatus.OK);
@@ -55,7 +55,7 @@ public class CompanyController {
 	
 	//find companies by location - list
 	@GetMapping("/{location}")
-	public ResponseEntity<List<Company>> findByLocation(@PathVariable("location") String location){
+	public ResponseEntity<List<Company>> findByLocation(@PathVariable String location){
 		List<Company> companiesByLocation = companyService.findCompaniesByLocation(location);
 		if(!companiesByLocation.isEmpty()) {
 			return new ResponseEntity<>(companiesByLocation, HttpStatus.OK);
@@ -72,7 +72,7 @@ public class CompanyController {
 	
 	//delete company by id
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteCompanyById(@PathVariable("id") Long id){
+	public ResponseEntity<String> deleteCompanyById(@PathVariable Long id){
 		boolean result = companyService.deleteCompanyById(id);
 		if(result)
 			return new ResponseEntity<>("Company deleted Successfully", HttpStatus.OK);
@@ -94,7 +94,7 @@ public class CompanyController {
 	//pending testing-------------------------------------------
 	//get jobs by company name/id
 	@GetMapping("jobs/{name}")
-	public ResponseEntity<List<Job>> getJobsByCompanyName(@PathVariable("name") String name){
+	public ResponseEntity<List<Job>> getJobsByCompanyName(@PathVariable String name){
 		
 		List<Job> jobsByCompany = companyService.getJobsByCompanyName(name);
 		if(jobsByCompany!=null) {
