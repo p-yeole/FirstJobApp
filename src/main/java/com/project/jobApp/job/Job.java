@@ -14,7 +14,6 @@ import jakarta.persistence.ManyToOne;
 public class Job {
 	public Job() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	

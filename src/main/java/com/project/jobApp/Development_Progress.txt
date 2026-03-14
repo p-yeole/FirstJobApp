@@ -3,3 +3,6 @@
 Job CRUD APIs created.
 Company CRUD APIs created.
 Reviews CRUD APIs created
+Authentication mechanism added using JWT.
+
+Migrated monolithic project to Postgres image on docker using docker-compose.
